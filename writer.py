@@ -9,7 +9,7 @@ mydate = datetime.datetime.now()
 def printit():
   threading.Timer(5.0, printit).start()
   f=open("/mnt/acs.txt",'a')
-  f.write(datetime.datetime.strftime(mydate, '%Y, %m, %d, %H, %M, %S'))
+  f.write(datetime.datetime.now().ctime())
   f.write ("heloo-"+'\t')
 
 printit()
