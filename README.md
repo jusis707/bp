@@ -41,21 +41,21 @@ oc login -u system:admin
 # oc expose svc/bp
 14. Check
 # oc get pod | grep bp
-bp-1-build   0/1       Completed   0          7m
-bp-2-hh8mc   1/1       Running     0          6m
+#bp-1-build   0/1       Completed   0          7m
+#bp-2-hh8mc   1/1       Running     0          6m
 15. Check
 # oc get route bp
-bp        bp-myproject.127.0.0.1.nip.io             bp         5000-tcp                 None
+#bp        bp-myproject.127.0.0.1.nip.io             bp         5000-tcp                 None
 16. Check running app
 curl bp-myproject.127.0.0.1.nip.io/hello
-HELLO-BP!
+#HELLO-BP!
 17. Check
 # oc get pvc
 18. Check
 # oc volume dc --all
-deploymentconfigs/bp
-  pvc/pvc-xnx7d (allocated 100GiB) as testvolume
-    mounted at /mnt
+#deploymentconfigs/bp
+#pvc/pvc-xnx7d (allocated 100GiB) as testvolume
+#mounted at /mnt
 19. Check
 # oc get pods
 2o. Check persistant storage and timestamped file for update every 10 secconds
