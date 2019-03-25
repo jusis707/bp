@@ -2,9 +2,9 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__, static_url_path='')
 
-@app.route('/feedback', methods=['POST']) 
+@app.route('/writetofile', methods=['POST']) 
 def log_feedback():
-    with open("/mnt/feedback.txt","a") as fo:
+    with open("/mnt/hello-bp.txt","a") as fo:
         fo.write(request.data.decode("utf-8"))
         print(request.data.decode("utf-8"))
         fo.write('\n')
