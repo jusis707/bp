@@ -22,21 +22,8 @@ TCPServer.allow_reuse_address = True
 httpd = TCPServer(("", PORT), Handler)
 httpd.serve_forever()
 
-
-from datetime import date
-
-def get_filename_datetime():
-    # Use current date to get a text file name.
-    return "file-" + str(date.today()) + ".txt"
-
-# Get full path for writing.
-name = get_filename_datetime()
-print("NAME", name)
-
-path = "/mnt/" + name
-print("PATH", path);
-
-with open(path, "w") as f:
-    # Write data to file.
-    f.write("HELLO\n")
-    f.write("WORLD\n")
+filename = "/tmp/l33og.txt"
+timp = "abcdef12345"
+file = open(filename, "a")
+file.write(timp)
+file.close()
