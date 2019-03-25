@@ -46,40 +46,30 @@ oc login -u system:admin
 # oc new-app https://github.com/jusis707/bp --name=bp
 
 12. Mount persistent volume
-# oc volume dc/bp --add --claim-size 10M --mount-path /mnt --name testvolume
+# oc volume dc/bp --add --mount-path /mnt --name testvolume
 
 13. Expose service 
 # oc expose svc/bp
 
-14. Check
+14. Check (in my case bp-2-hh8mc)
 # oc get pod | grep bp
-#bp-1-build   0/1       Completed   0          7m
-#bp-2-hh8mc   1/1       Running     0          6m
 
-15. Check
+15. Check (in my case bp-myproject.127.0.0.1.nip.io)
 # oc get route bp
-#bp        bp-myproject.127.0.0.1.nip.io             bp         5000-tcp                 None
 
-16. Check running app
+16. Check running app ( /hello)
 
 curl bp-myproject.127.0.0.1.nip.io/hello
-
-#HELLO-BP!
 
 17. Check
 # oc get pvc
 
 18. Check
 # oc volume dc --all
-#deploymentconfigs/bp
-#pvc/pvc-xnx7d (allocated 100GiB) as testvolume
-#mounted at /mnt
 
 19. Check
 # oc get pods
-#bp-1-build   0/1       Completed   0          7m
-#bp-2-hh8mc   1/1       Running     0          6m
 
-20. Check persistant storage and timestamped file for update every 10 secconds
+20. Check persistant storage and timestamped file for update, updates every 10 secconds
 # oc rsh bp-2-hh8mc ls -las /mnt
 # oc rsh bp-2-hh8mc cat /mnt/stamp.txt
