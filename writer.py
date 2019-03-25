@@ -9,7 +9,7 @@ app = Flask(__name__, static_url_path='')
 def printit():
   threading.Timer(5.0, printit).start()
   f=open("/mnt/acs.txt",'a')
-  f.write ("heloo-"+'\t')
+  f.write ("heloo-")
   f.write(datetime.datetime.now().ctime())
   
 printit()
