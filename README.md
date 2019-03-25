@@ -1,4 +1,4 @@
-# bp
+# BP
 Prerequisites:
 Clean installation of Centos 7 (on virt-manager)
 
