@@ -9,9 +9,9 @@ app = Flask(__name__, static_url_path='')
 def printit():
   threading.Timer(5.0, printit).start()
   f=open("/mnt/acs.txt",'a')
-  f.write(datetime.datetime.now().ctime())
   f.write ("heloo-"+'\t')
-
+  f.write(datetime.datetime.now().ctime())
+  
 printit()
 
 if __name__ == '__main__':
