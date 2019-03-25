@@ -10,9 +10,9 @@ def printit():
   f=open("/mnt/stamp.txt",'a')
   f.write ("\nHello-BP\n")
   f.write(datetime.datetime.now().ctime())
-  
+  print 'Hello BP!'
   
 printit()
-print 'Hello BP!'
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug = False)
