@@ -2,7 +2,7 @@ from http.server import HTTPStatus, BaseHTTPRequestHandler
 from socketserver import TCPServer
 
 PORT = 8000
-MESSAGE = "Hello, world!\n".encode("ascii")
+MESSAGE = "Hello, BP!\n".encode("ascii")
 
 
 class Handler(BaseHTTPRequestHandler):
