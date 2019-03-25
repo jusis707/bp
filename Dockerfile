@@ -1,5 +1,5 @@
-FROM python:3-alpine
+FROM python:2.7
 WORKDIR /usr/src/app
 EXPOSE 8000
 COPY server.py .
-CMD ["python3", "./server.py"]
+CMD ["./server.py"]
