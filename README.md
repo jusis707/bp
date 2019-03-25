@@ -26,15 +26,15 @@ EOF
 7. Reload and restart
 # systemctl daemon-reload
 # systemctl restart docker
-8. Firewalld (port 8000 for app)
-# firewall-cmd --permanent --add-port 8443/tcp --add-port 53/udp --add-port 8000/tcp
+8. Firewalld (port 5000 for app)
+# firewall-cmd --permanent --add-port 8443/tcp --add-port 53/udp --add-port 5000/tcp
 # firewall-cmd --reload
 9. Start cluster
 # oc cluster up
 10. Login to oc
 oc login -u system:admin
-11. Deploy my app via cloud.docker.com -> https://github.com/jusis707/bp Dockerfile
-# oc new-app --docker-image=jusis707/bp --name=bp
+11. Deploy my app from https://github.com/jusis707/bp (Dockerfile)
+# oc new-app https://github.com/jusis707/bp --name=bp
 12. Expose service 
 # oc expose svc/bp
 13.
@@ -42,7 +42,7 @@ oc login -u system:admin
 14.
 # oc get route bp
 15. Check running app
-curl http://bp-myproject.127.0.0.1.nip.io 8000
+curl http://bp-myproject.127.0.0.1.nip.io 5000
 Hello, world!
 16. Mount persistent volume
 # oc volume dc/bp --add --claim-size 100M --mount-path /mnt --name testvolume
