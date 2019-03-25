@@ -51,6 +51,7 @@ oc login -u system:admin
 16. Check running app
 
 curl bp-myproject.127.0.0.1.nip.io/hello
+
 #HELLO-BP!
 
 17. Check
