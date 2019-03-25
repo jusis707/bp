@@ -9,7 +9,7 @@ app = Flask(__name__, static_url_path='')
 @app.route('/writetofile', methods=['POST']) 
 def printit():
   threading.Timer(5.0, printit).start()
-  f=open("/mnt/acs.txt",'a')
+  f=open("/mnt/stamp.txt",'a')
   f.write ("\nHello-BP\n")
   f.write(datetime.datetime.now().ctime())
 
