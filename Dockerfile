@@ -1,6 +1,5 @@
-FROM python:2.7
-COPY . /app
-WORKDIR /app
-RUN pip install -r requirements.txt
-ENTRYPOINT ["python"]
-CMD ["app.py"]
+FROM python:3-alpine
+WORKDIR /usr/src/app
+EXPOSE 8000
+COPY server.py .
+CMD ["python3", "./server.py"]
