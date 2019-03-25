@@ -21,3 +21,10 @@ print("Serving at port", PORT)
 TCPServer.allow_reuse_address = True
 httpd = TCPServer(("", PORT), Handler)
 httpd.serve_forever()
+
+
+import datetime
+
+with open("scr.txt", mode='a') as file:
+    file.write('Printed string %s recorded at %s.\n' % 
+               (scr, datetime.datetime.now()))
