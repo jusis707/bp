@@ -21,9 +21,3 @@ print("Serving at port", PORT)
 TCPServer.allow_reuse_address = True
 httpd = TCPServer(("", PORT), Handler)
 httpd.serve_forever()
-
-filename = "/tmp/l33og.txt"
-timp = "abcdef12345"
-file = open(filename, "a")
-file.write(timp)
-file.close()
