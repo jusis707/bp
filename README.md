@@ -33,7 +33,7 @@ EOF
 # oc cluster up
 10. Login to oc
 oc login -u system:admin
-11. Deploy my app via hub.docker.com -> https://github.com/jusis707/bp Dockerfile
+11. Deploy my app via cloud.docker.com -> https://github.com/jusis707/bp Dockerfile
 # oc new-app --docker-image=jusis707/bp --name=bp
 12. Expose service 
 # oc expose svc/bp
