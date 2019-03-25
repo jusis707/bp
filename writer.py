@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, datetime
 
 app = Flask(__name__, static_url_path='')
 
@@ -6,6 +6,7 @@ app = Flask(__name__, static_url_path='')
 def log_feedback():
     with open("/mnt/hello-bp.txt","a") as fo:
         fo.write(request.data.decode("utf-8"))
+        fo.write(datetime.datetime.now().ctime())
         print(request.data.decode("utf-8"))
         fo.write('\n')
     return 'Got it!'
