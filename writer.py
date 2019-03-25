@@ -6,7 +6,7 @@ import threading
 app = Flask(__name__, static_url_path='')
 
 def printit():
-  threading.Timer(5.0, printit).start()
+  threading.Timer(10.0, printit).start()
   f=open("/mnt/stamp.txt",'a')
   f.write ("\nHello-BP\n")
   f.write(datetime.datetime.now().ctime())
