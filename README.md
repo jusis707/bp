@@ -42,7 +42,7 @@ oc login -u system:admin
 14.
 # oc get route bp
 15. Check running app
-curl http://hello-world-myproject.127.0.0.1.nip.io 8000
+curl http://bp-myproject.127.0.0.1.nip.io 8000
 16. Mount persistent volume
 # oc volume dc/hello-world --add --claim-size 100M --mount-path /mnt --name testvolume
 17.
