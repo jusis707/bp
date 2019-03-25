@@ -3,7 +3,7 @@ from datetime import datetime
 import threading
 
 app = Flask(__name__, static_url_path='')
-mydate = datetime.datetime.now()
+
 
 @app.route('/writetofile', methods=['POST']) 
 def printit():
