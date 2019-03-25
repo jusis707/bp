@@ -23,11 +23,13 @@ cat << EOF > /etc/docker/daemon.json
 }
 EOF
 
-7. systemctl daemon-reload and # systemctl restart docker
-8. Firewalld
---- firewall-cmd --permanent --add-port 8443/tcp --add-port 53/udp --add-port 8000/tcp
---- firewall-cmd --reload
-9. STart cluster
+7. Reload and restart
+# systemctl daemon-reload
+# systemctl restart docker
+8. Firewalld (port 8000 for app)
+# firewall-cmd --permanent --add-port 8443/tcp --add-port 53/udp --add-port 8000/tcp
+# firewall-cmd --reload
+9. Start cluster
 # oc cluster up
 10. Login to oc
 oc login -u system:admin
@@ -35,21 +37,20 @@ oc login -u system:admin
 # oc new-app --docker-image=jusis707/bp --name=bp
 12. Expose service 
 # oc expose svc/bp
-oc get pod | grep bp
-oc get route bp
-Check running app
-curl http://hello-world-myproject.127.0.0.1.nip.io
+13.
+# oc get pod | grep bp
+14.
+# oc get route bp
+15. Check running app
+curl http://hello-world-myproject.127.0.0.1.nip.io 8000
 ???oc volume dc/hello-world --add --claim-size 100M --mount-path /mnt --name testvolume
-oc get pvc
-oc volume dc --all
-oc get pods
-
-oc get pods
-oc rsh bp-3-hzdtj
-
-oc set volume dc/bp --add --name=tmp-mount --claim-name=data --type pvc --claim-size=20M --mount-path /mnt
-oc rsh dummy-1-9j3p3 ls -las /mnt
-
-
-
-
+16. 
+# oc get pvc
+17.
+# oc volume dc --all
+18.
+# oc get pods
+19.
+# oc rsh bp-3-hzdtj
+20.
+# oc rsh bp-3-hzdtj ls -las /mnt
