@@ -43,14 +43,15 @@ oc login -u system:admin
 # oc get route bp
 15. Check running app
 curl http://hello-world-myproject.127.0.0.1.nip.io 8000
-???oc volume dc/hello-world --add --claim-size 100M --mount-path /mnt --name testvolume
-16. 
-# oc get pvc
+16. Mount persistent volume
+# oc volume dc/hello-world --add --claim-size 100M --mount-path /mnt --name testvolume
 17.
-# oc volume dc --all
+# oc get pvc
 18.
-# oc get pods
+# oc volume dc --all
 19.
-# oc rsh bp-3-hzdtj
+# oc get pods
 20.
+# oc rsh bp-3-hzdtj
+21. Check /mnt 
 # oc rsh bp-3-hzdtj ls -las /mnt
