@@ -1,11 +1,23 @@
-from flask import Flask
+from http.server import HTTPStatus, BaseHTTPRequestHandler
+from socketserver import TCPServer
 
-app = Flask(__name__)
-
-@app.route("/")
-def hello():
-    return "Flask inside Docker!!"
+PORT = 8000
+MESSAGE = print "Hello BP!"
 
 
-if __name__ == "__main__":
-    app.run(debug=True,host='0.0.0.0')
+class Handler(BaseHTTPRequestHandler):
+    """Respond to requests with hello."""
+
+    def do_GET(self):
+        """Handle GET"""
+        self.send_response(HTTPStatus.OK)
+        self.send_header("Content-type", "text/plain")
+        self.send_header("Content-length", len(MESSAGE))
+        self.end_headers()
+        self.wfile.write(MESSAGE)
+
+
+print("Serving at port", PORT)
+TCPServer.allow_reuse_address = True
+httpd = TCPServer(("", PORT), Handler)
+httpd.serve_forever()
