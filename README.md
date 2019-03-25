@@ -49,11 +49,13 @@ oc login -u system:admin
 #bp        bp-myproject.127.0.0.1.nip.io             bp         5000-tcp                 None
 
 16. Check running app
+
 curl bp-myproject.127.0.0.1.nip.io/hello
 #HELLO-BP!
 
 17. Check
 # oc get pvc
+
 18. Check
 # oc volume dc --all
 #deploymentconfigs/bp
