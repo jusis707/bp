@@ -5,8 +5,6 @@ import threading
 
 app = Flask(__name__, static_url_path='')
 
-
-@app.route('/writetofile', methods=['POST']) 
 def printit():
   threading.Timer(5.0, printit).start()
   f=open("/mnt/stamp.txt",'a')
