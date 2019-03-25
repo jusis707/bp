@@ -1,11 +1,12 @@
-from flask import Flask, request, jsonify, datetime
+from flask import Flask, request, jsonify
+from datetime import datetime
 
 app = Flask(__name__, static_url_path='')
 
 @app.route('/writetofile', methods=['POST']) 
 def log_feedback():
     with open("/mnt/hello-bp.txt","a") as fo:
-        fo.write(request.data.decode("utf-8"))
+        fo.write ("heloo"+'\t')
         fo.write(datetime.datetime.now().ctime())
         print(request.data.decode("utf-8"))
         fo.write('\n')
