@@ -6,8 +6,7 @@ app = Flask(__name__, static_url_path='')
 @app.route('/writetofile', methods=['POST']) 
 def log_feedback():
     with open("/mnt/hello-bp.txt","a") as fo:
-        fo.write ("heloo"+'\t')
-        fo.write(datetime.datetime.now().ctime())
+        fo.write(request.data.decode("utf-8"))
         print(request.data.decode("utf-8"))
         fo.write('\n')
     return 'Got it!'
