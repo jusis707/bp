@@ -43,10 +43,10 @@ oc login -u system:admin
 # oc get pod | grep bp
 bp-1-build   0/1       Completed   0          7m
 bp-2-hh8mc   1/1       Running     0          6m
-14. Check
+15. Check
 # oc get route bp
 bp        bp-myproject.127.0.0.1.nip.io             bp         5000-tcp                 None
-15. Check running app
+16. Check running app
 curl bp-myproject.127.0.0.1.nip.io/hello
 HELLO-BP!
 17. Check
