@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from datetime import datetime
-from threading import threading
+import threading
 
 app = Flask(__name__, static_url_path='')
 
