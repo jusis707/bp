@@ -35,24 +35,29 @@ EOF
 oc login -u system:admin
 11. Deploy my app from https://github.com/jusis707/bp (Dockerfile)
 # oc new-app https://github.com/jusis707/bp --name=bp
-12. Expose service 
+12. Mount persistent volume
+# oc volume dc/bp --add --claim-size 10M --mount-path /mnt --name testvolume
+13. Expose service 
 # oc expose svc/bp
-13.
+14. Check
 # oc get pod | grep bp
-14.
+bp-1-build   0/1       Completed   0          7m
+bp-2-hh8mc   1/1       Running     0          6m
+14. Check
 # oc get route bp
+bp        bp-myproject.127.0.0.1.nip.io             bp         5000-tcp                 None
 15. Check running app
-curl http://bp-myproject.127.0.0.1.nip.io 5000
-Hello, world!
-16. Mount persistent volume
-# oc volume dc/bp --add --claim-size 100M --mount-path /mnt --name testvolume
-17.
+curl bp-myproject.127.0.0.1.nip.io/hello
+HELLO-BP!
+17. Check
 # oc get pvc
-18.
+18. Check
 # oc volume dc --all
-19.
+deploymentconfigs/bp
+  pvc/pvc-xnx7d (allocated 100GiB) as testvolume
+    mounted at /mnt
+19. Check
 # oc get pods
-20.
-# oc rsh bp-3-hzdtj
-21. Check /mnt 
-# oc rsh bp-3-hzdtj ls -las /mnt
+2o. Check persistant storage and timestamped file for update every 10 secconds
+# oc rsh bp-2-hh8mc ls -las /mnt
+# oc rsh bp-2-hh8mc cat /mnt/stamp.txt
