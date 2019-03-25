@@ -62,8 +62,12 @@ curl bp-myproject.127.0.0.1.nip.io/hello
 #deploymentconfigs/bp
 #pvc/pvc-xnx7d (allocated 100GiB) as testvolume
 #mounted at /mnt
+
 19. Check
 # oc get pods
-2o. Check persistant storage and timestamped file for update every 10 secconds
+#bp-1-build   0/1       Completed   0          7m
+#bp-2-hh8mc   1/1       Running     0          6m
+
+20. Check persistant storage and timestamped file for update every 10 secconds
 # oc rsh bp-2-hh8mc ls -las /mnt
 # oc rsh bp-2-hh8mc cat /mnt/stamp.txt
