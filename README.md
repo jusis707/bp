@@ -50,26 +50,26 @@ oc login -u system:admin
 Create volume
 # oc volume dc/bp --add --claim-size 2M --mount-path /mnt --name=bp
 
-13. Expose service 
+13. Expose service (not neccessary)
 # oc expose svc/bp
 
-14. Check (in my case bp-2-hh8mc)
+14. Check for pod running (in my case bp-2-hh8mc)
 # oc get pod | grep bp
 
-15. Check (in my case bp-myproject.127.0.0.1.nip.io)
+15. Check for url for next step (in my case bp-myproject.127.0.0.1.nip.io)
 # oc get route bp
 
-16. Check running app ( /hello)
+16. Check running app ( url + /hello)
 
 curl bp-myproject.127.0.0.1.nip.io/hello
 
-17. Check
+17. Check all persistent volumes
 # oc get pvc
 
-18. Check
+18. Check mounted volume
 # oc volume dc --all
 
-19. Check
+19. Get pod name for next step
 # oc get pods
 
 20. Check persistant storage and timestamped file for update, updates every 10 secconds (in my case bp-2-hh8mc)
