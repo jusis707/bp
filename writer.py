@@ -14,12 +14,7 @@ printit()
 
 @app.route("/") 
 def hello(): 
-    return "Hello World!"
-
-@app.route('/hello')
-def printMsg():
-    app.logger.info('testing info log')
-    return "HELLO-BP!"
+    return "Hello BP!"
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug = False)
