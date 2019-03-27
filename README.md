@@ -73,3 +73,15 @@ curl bp-myproject.127.0.0.1.nip.io/hello
 20. Check persistant storage and timestamped file for update, updates every 10 secconds
 # oc rsh bp-2-hh8mc ls -las /mnt
 # oc rsh bp-2-hh8mc cat /mnt/stamp.txt
+
+21. Check if app is running via Ansible
+vi bp1.yaml
+
+---
+- name: Check if app is serving content
+  hosts: bp-host
+  gather_facts: no
+
+  tasks:
+      - uri:
+         url: http://bp-myproject.127.0.0.1.nip.io/hello
