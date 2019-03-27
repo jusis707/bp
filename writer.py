@@ -2,7 +2,7 @@ from flask import Flask
 import datetime
 import threading
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='')
 
 def printit():
   threading.Timer(10.0, printit).start()
@@ -16,4 +16,4 @@ def hello():
     return "Hello BP!"
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', debug = False)
