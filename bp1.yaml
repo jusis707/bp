@@ -10,7 +10,7 @@
     - debug: msg="{{ command_result }}"
 
     - name: Check if /mnt mounted
-      shell: "oc rsh bp-2-wkpzw df | grep /mnt"
+      shell: "oc rsh bp-2-hh8mc df | grep /mnt"
       register: output
 
     - debug: var=output
