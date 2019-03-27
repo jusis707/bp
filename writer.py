@@ -12,6 +12,10 @@ def printit():
   f.write(datetime.datetime.now().ctime())
 printit()
 
+@app.route("/") 
+def hello(): 
+    return "Hello World!"
+
 @app.route('/hello')
 def printMsg():
     app.logger.info('testing info log')
