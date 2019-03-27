@@ -76,7 +76,7 @@ curl bp-myproject.127.0.0.1.nip.io/hello
 # oc rsh bp-2-hh8mc ls -las /mnt
 # oc rsh bp-2-hh8mc cat /mnt/stamp.txt
 
-21. Check if app is running and serving web content "Hello BP!" via Ansible
+21. Check if app is running and serving web content "Hello BP!" and mounted well at /mnt via Ansible (not the right way via bash command)
 # file bp1.yaml
 
 
