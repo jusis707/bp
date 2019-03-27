@@ -49,7 +49,7 @@ oc login -u system:admin
 
 Create volume
 # oc create -f pv.yaml (file in repo)
-# oc volume dc/bp --add -t pvc --claim-name=bp0005 --mount-path /mnt --name=bp
+# oc volume dc/bp --add --type=persistentVolumeClaim --claim-name=bpv1 --claim-size 4M --mount-path /mnt --name=bp
 
 13. Expose service 
 # oc expose svc/bp
