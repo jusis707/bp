@@ -14,7 +14,7 @@ def printit():
 printit()
 
 @application.route("/")
-def hello():
+def printMsg():
     return "\nHello BP!\n"
 
 if __name__ == '__main__':
