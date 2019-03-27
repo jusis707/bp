@@ -7,7 +7,7 @@ Clean installation of Centos 7 (on virt-manager)
 # yum install -y wget git ansible (with dependencies python-pip etc.)
 
 2. Install docker
-# yum install docker
+# yum install docker -y
 
 3.Install oc client tools
 # wget https://github.com/openshift/origin/releases/download/v3.9.0/openshift-origin-client-tools-v3.9.0-191fece-linux-64bit.tar.gz 
