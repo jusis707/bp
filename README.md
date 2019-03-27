@@ -47,7 +47,7 @@ EOF
 # oc new-app https://github.com/jusis707/bp --name=bp
 
 12. Mount persistent volume (pv.yaml from repo)
-# oc volume dc/bp --add --claim-name=bpvolume --mount-path /mnt --name=bp
+# oc volume dc/bp --add --claim-name=bpvolume --claim-size 2M --mount-path /mnt --name=bp
 
 13. Expose service (easier to check with ansible uri module)
 # oc expose svc/bp
