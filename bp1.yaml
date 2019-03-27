@@ -11,4 +11,5 @@
     - name: Check if /mnt is mounted
       shell: "oc rsh bp-2-hh8mc df | grep /mnt"
       register: output
+      changed_when: False
     - debug: msg="{{ output }}"
