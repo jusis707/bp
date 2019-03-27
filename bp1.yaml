@@ -6,8 +6,8 @@
       uri:
         url: http://bp-myproject.127.0.0.1.nip.io/hello
         return_content: yes
-      register: command_result
-    - debug: msg="{{ command_result }}"
+      register: app_result
+    - debug: msg="{{ app_result }}"
 
     - name: Check if /mnt mounted
       shell: "oc rsh bp-2-hh8mc df | grep /mnt"
