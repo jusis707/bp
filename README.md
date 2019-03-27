@@ -54,10 +54,10 @@ Create volume
 13. Expose service (easier to check with ansible uri module)
 # oc expose svc/bp
 
-14. Check for pod running (in my case bp-2-hh8mc)
+14. Check for the pod running (in my case bp-2-hh8mc)
 # oc get pod | grep bp
 
-15. Check for url for next step (in my case bp-myproject.127.0.0.1.nip.io)
+15. Check url for the next step (in my case bp-myproject.127.0.0.1.nip.io)
 # oc get route bp
 
 16. Check running app 
