@@ -13,9 +13,10 @@ def printit():
   f.write(datetime.datetime.now().ctime())
 printit()
 
-@application.route("/")
+@app.route('/hello')
 def printMsg():
-    return "\nHello BP!\n"
+    app.logger.info('testing info log')
+    return "HELLO-BP!"  
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug = False)
