@@ -1,5 +1,4 @@
-from flask import Flask, request, jsonify
-from datetime import datetime
+from flask import Flask
 import datetime
 import threading
 import logging
