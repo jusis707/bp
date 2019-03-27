@@ -77,16 +77,15 @@ curl bp-myproject.127.0.0.1.nip.io/hello
 21. Check if app is running via Ansible
 vi bp1.yaml
 
----
-- name: Check if app is serving content
-  hosts: bp-host
-  gather_facts: no
+#---
+#  - hosts: bp-host
+#    become: true
+#    tasks:
+#    - name: "Check if python app is running and serving content"
+#      uri:
+#	url: http://bp-myproject.127.0.0.1.nip.io/hello
+#        return_content: yes
+#      register: command_result
+#   - debug: msg="{{ command_result }}"
 
-    tasks:
-    - name: "Checking server availibility"
-      uri:
-	       url: bp-myproject.127.0.0.1.nip.io/hello
-      register: command_result
-
-    - debug: msg="{{ command_result }}"
 
