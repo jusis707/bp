@@ -1,6 +1,5 @@
 ---
   - hosts: bp-host
-    become: true
     tasks:
     - name: "Check if python app is running and serving content"
       uri:
@@ -9,8 +8,7 @@
       register: app_result
     - debug: msg="{{ app_result }}"
 
-    - name: Check if r
+    - name: Check if /mnt is mounted
       shell: "oc rsh bp-2-hh8mc df | grep /mnt"
       register: output
-
     - debug: msg="{{ output }}"
