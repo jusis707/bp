@@ -4,7 +4,7 @@ Clean installation of Centos 7 (on virt-manager)
 
 1. Update + tools
 # yum update -y
-# yum install -y wget git
+# yum install -y wget git ansible (with dependencies python-pip etc.)
 
 2. Install docker
 # yum install docker
