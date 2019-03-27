@@ -9,8 +9,8 @@
       register: app_result
     - debug: msg="{{ app_result }}"
 
-    - name: Check if /mnt mounted
+    - name: Check if r
       shell: "oc rsh bp-2-hh8mc df | grep /mnt"
       register: output
 
-    - debug: var=output
+    - debug: msg="{{ output }}"
