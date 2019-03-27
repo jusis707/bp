@@ -10,7 +10,6 @@ Clean installation of Centos 7 (on virt-manager)
 # yum install docker
 
 3.Install oc client tools
- Download OpenShift Origin package
 # wget https://github.com/openshift/origin/releases/download/v3.9.0/openshift-origin-client-tools-v3.9.0-191fece-linux-64bit.tar.gz 
 
 4. Extract
@@ -21,6 +20,7 @@ Clean installation of Centos 7 (on virt-manager)
 # sudo cp oc /usr/local/bin/
 
 6. Add insecure registry to docker daemon
+
 sudo su -
 cat << EOF > /etc/docker/daemon.json 
 {
@@ -60,8 +60,7 @@ Create volume
 # oc get route bp
 
 16. Check running app 
-
-curl bp-myproject.127.0.0.1.nip.io
+# curl bp-myproject.127.0.0.1.nip.io
 
 17. Check all persistent volumes
 # oc get pvc
