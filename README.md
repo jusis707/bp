@@ -67,7 +67,7 @@ EOF
 18. Check mounted volume
 # oc volume dc --all
 
-19. Get pod name for the next step
+19. Get running pod name for the next step
 # oc get pod | grep bp
 
 20. Check persistant storage and timestamped file for update, updates every 10 secconds (in my case pod bp-2-hh8mc)
