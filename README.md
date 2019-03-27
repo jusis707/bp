@@ -59,9 +59,9 @@ Create volume
 15. Check for url for next step (in my case bp-myproject.127.0.0.1.nip.io)
 # oc get route bp
 
-16. Check running app ( url + /hello)
+16. Check running app 
 
-curl bp-myproject.127.0.0.1.nip.io/hello
+curl bp-myproject.127.0.0.1.nip.io
 
 17. Check all persistent volumes
 # oc get pvc
