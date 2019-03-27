@@ -40,7 +40,7 @@ EOF
 # oc cluster up
 
 10. Login to oc
-oc login -u system:admin
+# oc login -u system:admin
 
 11. Deploy my app from https://github.com/jusis707/bp (Dockerfile)
 # oc new-app https://github.com/jusis707/bp --name=bp
@@ -69,10 +69,10 @@ curl bp-myproject.127.0.0.1.nip.io
 18. Check mounted volume
 # oc volume dc --all
 
-19. Get pod name for next step
-# oc get pods
+19. Get pod name for the next step
+# oc get pod | grep bp
 
-20. Check persistant storage and timestamped file for update, updates every 10 secconds (in my case bp-2-hh8mc)
+20. Check persistant storage and timestamped file for update, updates every 10 secconds (in my case pod bp-2-hh8mc)
 # oc rsh bp-2-hh8mc ls -las /mnt
 # oc rsh bp-2-hh8mc cat /mnt/stamp.txt
 
