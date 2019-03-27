@@ -51,7 +51,7 @@ EOF
 Create volume
 # oc volume dc/bp --add --claim-size 2M --mount-path /mnt --name=bp
 
-13. Expose service (easier to check with ansible url module)
+13. Expose service (easier to check with ansible uri module)
 # oc expose svc/bp
 
 14. Check for pod running (in my case bp-2-hh8mc)
