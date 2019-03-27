@@ -48,8 +48,7 @@ oc login -u system:admin
 12. Mount persistent volume
 
 Create volume
-# oc create -f pv.yaml (file in repo)
-# oc volume dc/bp --add --type=persistentVolumeClaim --claim-name=bpv1 --claim-size 4M --mount-path /mnt --name=bp
+# oc volume dc/bp --add --mount-path /mnt --name=bp
 
 13. Expose service 
 # oc expose svc/bp
