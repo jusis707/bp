@@ -32,7 +32,7 @@ EOF
 # systemctl daemon-reload
 # systemctl restart docker
 
-8. Firewalld (port 5000 for app)
+8. Firewalld (not neccessary at all) (port 5000 for app)
 # firewall-cmd --permanent --add-port 8443/tcp --add-port 53/udp --add-port 5000/tcp
 # firewall-cmd --reload
 
