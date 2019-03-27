@@ -70,7 +70,7 @@ curl bp-myproject.127.0.0.1.nip.io/hello
 19. Check
 # oc get pods
 
-20. Check persistant storage and timestamped file for update, updates every 10 secconds
+20. Check persistant storage and timestamped file for update, updates every 10 secconds (in my case bp-2-hh8mc)
 # oc rsh bp-2-hh8mc ls -las /mnt
 # oc rsh bp-2-hh8mc cat /mnt/stamp.txt
 
