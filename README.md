@@ -75,7 +75,7 @@ curl bp-myproject.127.0.0.1.nip.io/hello
 # oc rsh bp-2-hh8mc cat /mnt/stamp.txt
 
 21. Check if app is running and serving web content "Hello BP!" via Ansible
-#file bp1.yaml
+# file bp1.yaml
 
 
 
