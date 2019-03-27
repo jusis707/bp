@@ -75,17 +75,7 @@ curl bp-myproject.127.0.0.1.nip.io/hello
 # oc rsh bp-2-hh8mc cat /mnt/stamp.txt
 
 21. Check if app is running via Ansible
-vi bp1.yaml
+file bp1.yaml
 
-# ---
-#  - hosts: bp-host
-#    become: true
-#    tasks:
-#    - name: "Check if python app is running and serving content"
-#      uri:
-#	       url: http://bp-myproject.127.0.0.1.nip.io/hello
-#        return_content: yes
-#      register: command_result
-#   - debug: msg="{{ command_result }}"
 
 
