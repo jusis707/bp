@@ -1,11 +1,13 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: bp0005
+  name: bpv1
 spec:
-  accessModes:
-    - ReadWriteMany
   capacity:
-   storage: 10Mi
+    storage: 4Mi
+  accessModes:
+    - ReadWriteOnce
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
   hostPath:
-    path: /data/bp0005/
+    path: /mnt
