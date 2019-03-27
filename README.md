@@ -48,7 +48,7 @@ oc login -u system:admin
 12. Mount persistent volume
 
 Create volume
-# oc volume dc/bp --add --mount-path /mnt --name=bp
+# oc volume dc/bp --add --claim-size 2M --mount-path /mnt --name=bp
 
 13. Expose service 
 # oc expose svc/bp
