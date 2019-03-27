@@ -22,6 +22,7 @@ Clean installation of Centos 7 (on virt-manager)
 6. Add insecure registry to docker daemon
 
 sudo su -
+
 cat << EOF > /etc/docker/daemon.json 
 {
     "insecure-registries" : [ "172.30.0.0/16" ]
