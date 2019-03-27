@@ -46,7 +46,10 @@ oc login -u system:admin
 # oc new-app https://github.com/jusis707/bp --name=bp
 
 12. Mount persistent volume
-# oc volume dc/bp --add --mount-path /mnt --name testvolume
+
+Create volume
+# oc create -f pv.yaml (file in repo)
+# oc volume dc/bp --add -t pvc --claim-name=bp0005 --mount-path /mnt --name=bp
 
 13. Expose service 
 # oc expose svc/bp
