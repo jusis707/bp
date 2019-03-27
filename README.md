@@ -46,11 +46,12 @@ EOF
 11. Deploy my app from https://github.com/jusis707/bp (Dockerfile)
 # oc new-app https://github.com/jusis707/bp --name=bp
 
-12. Mount persistent volume
+12. Mount persistent volume (pv.yaml from repo)
 # mkdir /data/bp
 # chmod 777 -R /data/bp
 # chcon -R unconfined_u:object_r:svirt_sandbox_file_t:s0 /data/bp
-# oc volume dc/bp --add --type=persistentVolumeClaim --claim-name=bpvolume --mount-path /mnt --name=bp
+# oc create -f pv.yaml
+# oc volume dc/bp --add --type=persistentVolumeClaim --claim-name=bpvolume --claim-size 2M --mount-path /mnt --name=bp
 
 13. Expose service (easier to check with ansible uri module)
 # oc expose svc/bp
