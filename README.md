@@ -82,6 +82,11 @@ vi bp1.yaml
   hosts: bp-host
   gather_facts: no
 
-  tasks:
-      - uri:
-         url: http://bp-myproject.127.0.0.1.nip.io/hello
+    tasks:
+    - name: "Checking server availibility"
+      uri:
+	       url: http://172.30.222.49:5000/hello
+      register: command_result
+
+    - debug: msg="{{ command_result }}"
+
