@@ -70,7 +70,7 @@ EOF
 19. Get running pod name for the next step
 # oc get pod | grep bp
 
-20. Check persistent storage and timestamped file for update, updates every 10 secconds (in my case pod bp-2-hh8mc)
+20. Check /mnt and timestamped file stamp.txt for update, content of file updates every 10 secconds (in my case pod bp-2-hh8mc)
 # oc rsh bp-2-hh8mc ls -las /mnt
 # oc rsh bp-2-hh8mc cat /mnt/stamp.txt
 
