@@ -77,7 +77,7 @@ EOF
 21. Check if app is running and serving web content "Hello BP!" and mounted well at /mnt with Ansible (in my case: 
 
 hosts: bp-host ;
-uri: bp-myproject.127.0.0.1.nip.io ;
+url: bp-myproject.127.0.0.1.nip.io ;
 pod: bp-2-hh8mc
 
 )
