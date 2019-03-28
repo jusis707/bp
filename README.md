@@ -65,7 +65,7 @@ EOF
 # oc get pvc
 
 18. Check mounted volume
-# oc volume dc --all
+# oc volume dc --all | grep bp
 
 19. Get running pod name for the next step
 # oc get pod | grep bp
