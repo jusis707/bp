@@ -3,13 +3,26 @@
     tasks:
     - name: "Check if python app is running and serving content"
       uri:
-        url: http://bp-myproject.127.0.0.1.nip.io
+	      url: http:///bp-myproject.127.0.0.1.nip.io
         return_content: yes
       register: app_result
     - debug: msg="{{ app_result }}"
 
     - name: Check if /mnt is mounted
       shell: "oc rsh bp-2-hh8mc df | grep /mnt"
-      register: output
+      register: output_mount
       changed_when: False
-    - debug: msg="{{ output }}"
+    - debug: msg="{{ output_mount }}"
+
+    - name: Check if timestamped file exists
+      shell: "oc rsh bp-2-hh8mc [ -f /mnt/stamp.txt ] && echo \"Stamp file exist\""
+      register: output_file_exist
+      changed_when: False
+    - debug: msg="{{ output_file_exist }}"
+
+    - name: Check timestamped file for updates every 10 seconds
+      shell: "oc rsh bp-2-hh8mc tail -4 /mnt/stamp.txt"
+      register: output_timer
+      changed_when: False
+    - debug: msg="{{ output_timer }}"
+
