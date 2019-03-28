@@ -82,7 +82,7 @@ pod: bp-2-hh8mc
 
 )
 
-# file bp1.yaml
+# file bp1.yml
 # ansible-playbook bp1.yml
 
 
