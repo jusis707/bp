@@ -9,7 +9,7 @@ Clean installation of Centos 7 (on virt-manager)
 2. Install docker
 # yum install -y docker
 
-3.Install oc client tools
+3. Download oc client tools
 # wget https://github.com/openshift/origin/releases/download/v3.9.0/openshift-origin-client-tools-v3.9.0-191fece-linux-64bit.tar.gz 
 
 4. Extract
@@ -58,7 +58,7 @@ EOF
 15. Check url for the next step (in my case bp-myproject.127.0.0.1.nip.io)
 # oc get route bp
 
-16. Check running app 
+16. Check running app for content output 
 # curl bp-myproject.127.0.0.1.nip.io
 
 17. Check all persistent volumes
@@ -74,7 +74,7 @@ EOF
 # oc rsh bp-2-hh8mc ls -las /mnt
 # oc rsh bp-2-hh8mc cat /mnt/stamp.txt
 
-21. Check if app is running and serving web content "Hello BP!" and mounted well at /mnt with Ansible (in my case bp-myproject.127.0.0.1.nip.io and bp-2-hh8mc)
+21. Check if app is running and serving web content "Hello BP!" and mounted well at /mnt with Ansible (in my case uri: bp-myproject.127.0.0.1.nip.io and pod: bp-2-hh8mc)
 # file bp1.yaml
 # ansible-playbook bp1.yaml
 
