@@ -58,7 +58,7 @@ EOF
 15. Check url for the next step (in my case bp-myproject.127.0.0.1.nip.io)
 # oc get route bp
 
-16. Check running app for content output 
+16. Check running app for the content output 
 # curl bp-myproject.127.0.0.1.nip.io
 
 17. Check all persistent volumes
