@@ -20,7 +20,7 @@
       changed_when: False
     - debug: msg="{{ output_file_exist }}"
 
-    - name: Check timestamped file for updates every 10 seconds
+    - name: Check timestamped file content for the updates every 10 seconds
       shell: "oc rsh bp-2-hh8mc tail -4 /mnt/stamp.txt"
       register: output_timer
       changed_when: False
