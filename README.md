@@ -74,10 +74,10 @@ EOF
 # oc rsh bp-2-hh8mc ls -las /mnt
 # oc rsh bp-2-hh8mc cat /mnt/stamp.txt
 
-21. Check if app is running and serving web content "Hello BP!" and mounted well at /mnt with Ansible (variables in my case: 
+21. Check if app is running and serving web content "Hello BP!" and mounted well at /mnt with Ansible (in my case: 
 
-host: bp-host
-uri: bp-myproject.127.0.0.1.nip.io
+hosts: bp-host ;
+uri: bp-myproject.127.0.0.1.nip.io ;
 pod: bp-2-hh8mc
 
 )
